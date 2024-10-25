@@ -8,9 +8,9 @@ def star_draw(n):
         return ['***', '* *', '***']
     else:
         stars = star_draw(n//3)  # n//3은 3으로 나눈 몫을 의미함, 재귀
-        result = []
+        result = []  # stars는 재귀 호출을 통해 반환된 값을 저장하는 변수, result는 출력할 별을 저장하는 배열
         for i in range(n): #n개의 줄을 생성하기 위함,
-            if i // (n//3) == 1:
+            if i // (n//3) == 1:  # 공백이 위치하는 곳 설정 -> 이것도 출력 보면서 조정했어야 했음....
                 result.append(stars[i % (n//3)] + ' ' * (n//3) + stars[i % (n//3)])  # 공백 줄 출력, %는 나머지
             else:
                 result.append(stars[i%(n//3)] * 3)  # 공백을 제외한 줄은 별을 그대로 출력한다
