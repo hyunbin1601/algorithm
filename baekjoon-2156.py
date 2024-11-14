@@ -13,10 +13,12 @@ wine = [int(input()) for _ in range(n)]
 dp = [0] * n  # dp배열을 0번부터 n-1번까지 생성
 
 def wine_dp(n):
-    if n == 0:
+    if n == 1:
         return wine[0]
-    elif n == 1:
+    elif n == 2:
         return wine[0] + wine[1]
+    elif n == 3:
+        return max(wine[0] + wine[2], wine[1] + wine[2], wine[0] + wine[1])
     else:
         dp[0] = wine[0]
         dp[1] = wine[0] + wine[1]
