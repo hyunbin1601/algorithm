@@ -25,6 +25,7 @@ def wine_dp(n):
         dp[2] = max(wine[0] + wine[2], wine[1] + wine[2], dp[1])
         for i in range(3, n):
             dp[i] = max(dp[i-3] + wine[i-1] + wine[i], dp[i-2] + wine[i], dp[i-1])
-        return dp[n-1]
+        return dp[n-1]  # dp 배열은 0부터 시작하는 배열로서, 최댓값을 저장하는 배열, dp의 마지막 요소에는 가장 최댓값이 저장된다
+    # dp는 이전까지의 값(wine 값 중!!) 중 가장 최댓값을 저장하는 배열이기 때문에, 그리고 2개의 요소를 더한 값이기 때문에 dp 요소와 인접한 wine 요소값을 더할 수 없다! 
 
 print(wine_dp(n))
