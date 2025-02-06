@@ -45,8 +45,8 @@ right_sum.sort() # 이진 탐색을 위해 정렬
 
 count = 0
 for ls in left_sum:
-    remain = c - ls
-    count += bisect.bisect_right(right_sum, remain)
+    remain = c - ls # 왼쪽 그룹 합을 선택했을 때 남은용량
+    count += bisect.bisect_right(right_sum, remain) # 오른쪽 그룹에서 remain 이하의 합의 개수를 이진 탐색으로 찾음
     
 
 print(count)
